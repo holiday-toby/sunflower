@@ -35,6 +35,21 @@ For more resources on learning Android development, visit the
 [Developer Guides](https://developer.android.com/guide/) at
 [developer.android.com](https://developer.android.com).
 
+### Unsplash API key
+
+Sunflower uses the [Unsplash API](https://unsplash.com/developers) to load pictures on the gallery
+screen. To use the API, you will need to obtain a free developer API key. See the
+[Unsplash API Documentation](https://unsplash.com/documentation) for instructions.
+
+Once you have the key, add this line to the `gradle.properties` file, either in your user home
+directory (usually `~/.gradle/gradle.properties` on Linux and Mac) or in the project's root folder:
+
+```
+unsplash_access_key=<your Unsplash access key>
+```
+
+The app is still usable without an API key, though you won't be able to navigate to the gallery screen.
+
 Screenshots
 -----------
 
@@ -64,8 +79,9 @@ Libraries Used
   * [Animations & Transitions][31] - Move widgets and transition between screens.
   * [Fragment][34] - A basic unit of composable UI.
   * [Layout][35] - Lay out widgets using different algorithms.
-* Third party
+* Third party and miscellaneous libraries
   * [Glide][90] for image loading
+  * [Hilt][92]: for [dependency injection][93]
   * [Kotlin Coroutines][91] for managing background threads with simplified code and reducing needs for callbacks
 
 [0]: https://developer.android.com/jetpack/components
@@ -86,6 +102,8 @@ Libraries Used
 [35]: https://developer.android.com/guide/topics/ui/declaring-layout
 [90]: https://bumptech.github.io/glide/
 [91]: https://kotlinlang.org/docs/reference/coroutines-overview.html
+[92]: https://developer.android.com/training/dependency-injection/hilt-android
+[93]: https://developer.android.com/training/dependency-injection
 
 Upcoming features
 -----------------
@@ -124,12 +142,6 @@ Non-Goals
 ---------
 The focus of this project is on Android Jetpack and the Android framework.
 Thus, there are no immediate plans to implement features outside of this scope.
-
-A note on dependency injection - while many projects (such as
-[Plaid](https://github.com/nickbutcher/plaid)) use
-[Dagger 2](https://github.com/google/dagger) for DI, there are no plans to
-incorporate DI into Sunflower.  This allows developers unfamiliar with dependency
-injection to better understand Sunflower's code without having to learn DI.
 
 Support
 -------
